@@ -1,11 +1,12 @@
 from __future__ import print_function
-from unittest.case import TestCase
-from selenium import webdriver
+
 import os
+from unittest.case import TestCase
+
+from selenium import webdriver
 
 
 class TableAssistantTestCase(TestCase):
-
     EMAIL_COLUMN_NAME = "E-mail"
 
     USER_COLUMN_NAME = "User"
@@ -33,7 +34,7 @@ class TableAssistantTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
-        path = "file://"+os.path.abspath("table_assistant/tests/sample.html")
+        path = "file://" + os.path.abspath("table_assistant/tests/sample.html")
         cls.driver.get(path)
         cls.table = cls.driver.find_element(*cls.table_locator)
 

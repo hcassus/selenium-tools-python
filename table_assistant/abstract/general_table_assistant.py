@@ -5,11 +5,10 @@ from ..interfaces.table_assistant import TableAssistant
 
 ROW_XPATH = "./tbody/tr"
 
-CELL_XPATH = "{0}[{1}]/td[{2}]".format(ROW_XPATH,"{0}","{1}")
+CELL_XPATH = "{0}[{1}]/td[{2}]".format(ROW_XPATH, "{0}", "{1}")
 
 
 class GeneralTableAssistant(TableAssistant):
-
     def __init__(self, table):
         self.table = table
 
@@ -30,11 +29,12 @@ class GeneralTableAssistant(TableAssistant):
         rownum = 0
         for row in rows:
             rownum += 1
-            cell = row.find_element(By.XPATH, "./td["+str(reference_column_index)+"]")
+            cell = row.find_element(By.XPATH, "./td[" + str(reference_column_index) + "]")
             text = cell.text
             if text == reference_value:
                 return rownum
-        raise NoSuchElementException("No rows match the given criteria: reference column: " + str(reference_column_index) + ", reference value: " + str(reference_value))
+        raise NoSuchElementException("No rows match the given criteria: reference column: " + str(
+            reference_column_index) + ", reference value: " + str(reference_value))
 
     def get_value_by_reference_column_index(self, reference_column_index, reference_column_value, actual_column_index):
         actual_row_index = self._get_row_index(reference_column_index, reference_column_value)

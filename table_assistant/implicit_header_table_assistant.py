@@ -5,9 +5,8 @@ from table_assistant.interfaces.titled_table_assistant import TitledTableAssista
 
 
 class ImplicitHeaderTableAssistant(HeaderTableAssistant, TitledTableAssistant):
-
-    def __init__(self, table):
-        super(ImplicitHeaderTableAssistant, self).__init__(table)
+    def __init__(self, table_webelement):
+        super(ImplicitHeaderTableAssistant, self).__init__(table_webelement)
         self.header_lines = 1
 
     def _get_header_column_locator(self):
@@ -20,4 +19,5 @@ class ImplicitHeaderTableAssistant(HeaderTableAssistant, TitledTableAssistant):
         return super(ImplicitHeaderTableAssistant, self).get_value_by_position(row + self.header_lines, column)
 
     def _get_row_index(self, reference_column_index, reference_value):
-        return super(ImplicitHeaderTableAssistant, self)._get_row_index(reference_column_index, reference_value) - self.header_lines
+        return super(ImplicitHeaderTableAssistant, self)._get_row_index(reference_column_index,
+                                                                        reference_value) - self.header_lines

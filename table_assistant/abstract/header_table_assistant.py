@@ -1,12 +1,10 @@
 from abc import abstractmethod
 
-
 from general_table_assistant import GeneralTableAssistant
 from ..interfaces.titled_table_assistant import TitledTableAssistant
 
 
 class HeaderTableAssistant(GeneralTableAssistant, TitledTableAssistant):
-
     def __init__(self, table):
         super(HeaderTableAssistant, self).__init__(table)
         self.column_indexes = None
@@ -26,7 +24,7 @@ class HeaderTableAssistant(GeneralTableAssistant, TitledTableAssistant):
         reference_column_index = self.get_column_index(reference_column_name)
         actual_column_index = self.get_column_index(actual_column_name)
         actual_row_index = self._get_row_index(reference_column_index, reference_column_value)
-        return self.get_value_by_position(actual_row_index,actual_column_index)
+        return self.get_value_by_position(actual_row_index, actual_column_index)
 
     def get_column_index(self, column_name):
         return self.column_indexes[column_name]
@@ -40,5 +38,4 @@ class HeaderTableAssistant(GeneralTableAssistant, TitledTableAssistant):
             for header in headers:
                 text = header.text
                 self.column_indexes[text] = index
-                index +=1
-
+                index += 1

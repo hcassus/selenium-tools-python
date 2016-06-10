@@ -34,7 +34,7 @@ class TableAssistantTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
-        path = "file://" + os.path.abspath("table_assistant/tests/sample.html")
+        path = "file://" + os.path.abspath("selenium_tools/table_assistant/tests/sample.html")
         cls.driver.get(path)
         cls.table = cls.driver.find_element(*cls.table_locator)
 

@@ -1,6 +1,5 @@
-from table_assistant.abstract.general_table_assistant import GeneralTableAssistant
-
-from table_assistant.interfaces.table_assistant import TableAssistant
+from selenium_tools.table_assistant.abstract.general_table_assistant import GeneralTableAssistant
+from selenium_tools.table_assistant.interfaces.table_assistant import TableAssistant
 
 
 class HeaderlessTableAssistant(GeneralTableAssistant, TableAssistant):

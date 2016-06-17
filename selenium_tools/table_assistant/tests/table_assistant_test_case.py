@@ -3,7 +3,7 @@ from __future__ import print_function
 import os
 from unittest.case import TestCase
 
-from selenium import webdriver
+from selenium_tools.table_assistant.tests.utils.browser_manager import BrowserManager
 
 
 class TableAssistantTestCase(TestCase):
@@ -33,11 +33,7 @@ class TableAssistantTestCase(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
-        path = "file://" + os.path.abspath("table_assistant/tests/sample.html")
+        cls.driver = BrowserManager().get_chrome_browser()
+        path = "file://" + os.path.abspath("selenium_tools/table_assistant/tests/sample.html")
         cls.driver.get(path)
         cls.table = cls.driver.find_element(*cls.table_locator)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()

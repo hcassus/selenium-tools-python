@@ -11,14 +11,12 @@ class Singleton(object):
 
 
 class BrowserManager(Singleton):
-
     chrome_driver = None
 
     def get_chrome_browser(self):
         if self.chrome_driver is None:
             self.chrome_driver = webdriver.Chrome()
         return self.chrome_driver
-
 
     def quit_chrome_browser(self):
         self.chrome_driver.quit()

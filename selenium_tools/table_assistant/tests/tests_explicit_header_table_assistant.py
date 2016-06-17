@@ -3,8 +3,8 @@ from __future__ import print_function
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-from selenium_tools.table_assistant import ExplicitHeaderTableAssistant
-from selenium_tools.table_assistant import TableAssistantTestCase
+from selenium_tools.table_assistant.explicit_header_table_assistant import ExplicitHeaderTableAssistant
+from selenium_tools.table_assistant.tests.table_assistant_test_case import TableAssistantTestCase
 
 
 class ExplicitHeaderTableAssistantTests(TableAssistantTestCase):

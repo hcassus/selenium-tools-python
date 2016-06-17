@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
-
-from table_assistant.abstract.header_table_assistant import HeaderTableAssistant
 from table_assistant.interfaces.titled_table_assistant import TitledTableAssistant
+
+from selenium_tools.table_assistant.abstract import HeaderTableAssistant
 
 
 class ImplicitHeaderTableAssistant(HeaderTableAssistant, TitledTableAssistant):

@@ -1,7 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-from table_assistant.tests.table_assistant_test_case import TableAssistantTestCase
+from selenium_tools.table_assistant.tests.table_assistant_test_case import TableAssistantTestCase
 from ..implicit_header_table_assistant import ImplicitHeaderTableAssistant
 
 
